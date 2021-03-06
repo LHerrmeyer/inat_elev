@@ -9,4 +9,14 @@ for elem in station_list["results"]:
 	if "minneapolis st" in elem["name"].lower():
 		station_id = elem["id"]
 
-dat = na.get_gsom_data(station_id,1971,2020)
+dat = na.get_gsom_data(station_id,1981,2010)
+prcp_sum = 0
+temp_sum = 0
+for elem in dat:
+	if(elem["datatype"] == "PRCP"):
+		prcp_sum += elem["value"]
+	elif(elem["datatype"] == "TAVG"):
+		temp_sum += elem["value"]
+avg_prcp = prcp_sum / 30
+avg_temp = temp_sum / (12 * 30)
+print(f"Avg precip:{avg_prcp}, avg temp: {avg_temp}")

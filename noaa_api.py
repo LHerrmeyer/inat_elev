@@ -35,28 +35,19 @@ def get_gsom_data_backend(station_id, start_date, end_date):
 		"enddate": end_date,
 		"limit": "1000",
 		"units": "metric"
-		#"datatypeid":"&".join(datatypes)
 	}
-	# We cannot escape the ampersand for the data types
-	#query_str = "&".join(f'{k}={v}' for (k,v) in query_dict.items())
-	#print(query_str)
 	res = requests.get(endpoint + ext,params=query_dict, headers=h)
-	#print("Up here")
 	try:
 		obj = json.loads(res.content)
 		meta = obj["metadata"]["resultset"]
 		new_offset = meta["offset"] + meta["count"]
 		limit = meta["limit"]
 	except:
-		#print(e)
 		print(res.content)
-	#print("Down here")
 	return obj["results"]
 
 def get_gsom_data(station_id, start_year, end_year):
-	#print("&".join(datatypes))
 	data_list = []
-	#tmp_start, tmp_end = 0
 	k = 1
 	tmp_start = start_year
 	tmp_end = start_year + k
@@ -66,6 +57,5 @@ def get_gsom_data(station_id, start_year, end_year):
 		data_list += out
 		tmp_start += k + 1
 		tmp_end += k + 1
-	#out = get_gsom_data_backend
 	return data_list
 
