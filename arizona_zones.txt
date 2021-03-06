@@ -1,0 +1,7 @@
+Life Zone;Annual Rainfall (in);Elev (ft);Mean annual temp (F);Plant indicators
+Alpine;23-30;11400;27-45;Above timberline, herbaceous species
+Hudsonian;23-30;9000-11400;27-45;Engelmann spruce, subalpine fir
+Canadian;23-30;8000-9000;27-45;White fir, blue spruce, Douglas fir
+Transition;17-26;7000-8000;40-50;Ponderosa pine, Douglas fir, sagebrush
+Upper Sonoran;12-18;4000-7000;50-65;Pinyon pine, juniper, scrub oak, sagebrush
+Lower Sonoran;8-12;0-4000;51-74;Creosote bush, mesquite, acacia, century plant.
