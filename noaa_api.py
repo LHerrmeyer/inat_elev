@@ -53,7 +53,7 @@ def get_dset_data(station_id, start_year, end_year,dataset):
 	tmp_start = start_year
 	tmp_end = start_year + k
 	while(tmp_end < end_year + k):
-		print(f"s {tmp_start} e {tmp_end}")
+		#print(f"s {tmp_start} e {tmp_end}")
 		out = get_dset_data_backend(station_id, f"{tmp_start}-01-01",f"{tmp_end}-12-31",dataset)
 		data_list += out
 		tmp_start += k + 1
