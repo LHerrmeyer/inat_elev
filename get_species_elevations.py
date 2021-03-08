@@ -3,6 +3,11 @@ import elev_api
 import statistics as stats
 import json
 
+# Location information
+location = (37.6775, -113.061944)
+names_base = "cedar_city_ut"
+radius = 50
+
 def get_stats(species_list, center, radius):
 	species_stats = {}
 	for species in species_list:
@@ -69,18 +74,12 @@ def main():
 	"Picea engelmannii", "Abies lasiocarpa", "Picea pungens", "Pinus longaeva", "Juniperus communis", "Pinus flexilis", "Ribes cereum", # Hudsonian 
 	"Phleum alpinum", "Geum rossii", "Phlox pulvinata", "Ribes montigenum" # Alpine-arctic
 	])
-	#locations.append((36.271598, -115.695569)) # Mt Charleston, NV
-	locations.append((37.6775, -113.061944)) # Cedar City, UT
-	#names_base = "mt_charleston_nv"
-	names_base = "cedar_city_ut"
-	radius = 50
 	names.append(f"{names_base}_{radius}km")
 	for i in range(len(species_lists)):
-		cur_dict = get_stats(species_list=species_lists[0], center=locations[0], radius=radius)
+		cur_dict = get_stats(species_list=species_lists[0], center=loc, radius=radius)
 		with open(f"{names[i]}.json","w+") as f:
 			json.dump(cur_dict, f)
 	print("Done!")
-	
 
 
 if __name__ == "__main__":
