@@ -16,6 +16,7 @@ def get_observations(req_dict):
 	return json.loads(response.content)
 
 def get_observations_results(req_dict):
+	print(req_dict["total_results"])
 	return req_dict["results"]
 
 def get_observation_coords(req_dict):

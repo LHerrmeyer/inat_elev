@@ -4,7 +4,7 @@ import statistics as stats
 import json
 
 # Location information
-location = (37.6775, -113.061944)
+loc = (37.6775, -113.061944)
 names_base = "cedar_city_ut"
 radius = 50
 
